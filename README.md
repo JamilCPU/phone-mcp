@@ -35,7 +35,13 @@ Claude Code <-- MCP (stdio) --> mcp-server (PC)
 
 **Security**: Traffic goes over Tailscale (WireGuard). Every request requires a shared API key. The phone is never exposed to the public internet.
 
-## Quick Start
+## Stack
+
+- Phone agent: Python 3.10+, FastAPI served by uvicorn, Termux and Termux:API, tested with pytest and linted with ruff
+- MCP server: TypeScript on Node.js 18+, `@modelcontextprotocol/sdk`, zod, tested with vitest
+- Tailscale (WireGuard) for the private connection; GitHub Actions CI
+
+## Running
 
 ### 1. Phone (Termux)
 
@@ -69,7 +75,7 @@ Add to `~/.claude/mcp.json`:
       "command": "node",
       "args": ["/path/to/phone-mcp/mcp-server/dist/index.js"],
       "env": {
-        "PHONE_IP": "100.x.x.x",
+        "PHONE_IP": "<phone-tailscale-ip>",
         "PHONE_PORT": "8080",
         "PHONE_AGENT_KEY": "your-key-from-install-sh"
       }
@@ -90,7 +96,7 @@ Restart Claude Code — you now have 25+ phone tools available.
 "What's my current GPS location?"
 "List files in /sdcard/Download"
 "Make my phone say hello"
-"Send an SMS to +1234567890: I'll be 10 minutes late"
+"Send an SMS to <phone-number>: I'll be 10 minutes late"
 ```
 
 See [docs/examples.md](docs/examples.md) for 35+ examples.
