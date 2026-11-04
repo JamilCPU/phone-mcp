@@ -26,7 +26,7 @@ Install Tailscale on your PC and sign in with the **same account**.
 ## Step 5: Verify connectivity
 
 ```bash
-ping 100.x.x.x
+ping <phone-tailscale-ip>
 ```
 
 ## Magic DNS (optional)

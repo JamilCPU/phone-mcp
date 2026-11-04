@@ -17,7 +17,7 @@ npm install && npm run build
       "command": "node",
       "args": ["/path/to/phone-mcp/mcp-server/dist/index.js"],
       "env": {
-        "PHONE_IP": "100.x.x.x",
+        "PHONE_IP": "<phone-tailscale-ip>",
         "PHONE_PORT": "8080",
         "PHONE_AGENT_KEY": "your-key"
       }

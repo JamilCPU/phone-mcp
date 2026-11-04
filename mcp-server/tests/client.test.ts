@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { PhoneClient } from "../src/client.js";
 
-const config = { phoneIp: "100.0.0.1", phonePort: 8080, agentKey: "test-key", timeoutMs: 5000 };
+const config = { phoneIp: "192.0.2.10", phonePort: 8080, agentKey: "test-key", timeoutMs: 5000 };
 
 describe("PhoneClient", () => {
   beforeEach(() => { vi.restoreAllMocks(); });
